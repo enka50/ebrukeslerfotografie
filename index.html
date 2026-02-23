@@ -471,19 +471,29 @@ footer{background:var(--soft-black);padding:70px 0 36px;}
       <a href="#contact" class="btn-g-outline">Boek jouw shoot</a>
     </div>
     <div class="portfolio-filters reveal" style="transition-delay:.1s;">
-      <button class="pf-btn active">Alles</button>
-      <button class="pf-btn">Portret</button>
-      <button class="pf-btn">Zwangerschap</button>
-      <button class="pf-btn">Loveshoot</button>
-      <button class="pf-btn">Familie</button>
+      <button class="pf-btn active" data-filter="alles">Alles</button>
+      <button class="pf-btn" data-filter="portret">Portret</button>
+      <button class="pf-btn" data-filter="zwangerschap">Zwangerschap</button>
+      <button class="pf-btn" data-filter="loveshoot">Loveshoot</button>
+      <button class="pf-btn" data-filter="familie">Familie</button>
     </div>
     <div class="portfolio-grid reveal" style="transition-delay:.2s;">
-      <div class="pg"><img src="FOTO_PORTRET_1.jpg" alt="Portfolio 1" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pg"><img src="FOTO_PORTRET_2.jpg" alt="Portfolio 2" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pg"><img src="FOTO_FAMILY.jpg" alt="Portfolio 3" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pg"><img src="FOTO_LOVE_1.jpg" alt="Portfolio 4" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pg"><img src="FOTO_ZWANGER_1.jpg" alt="Portfolio 5" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pg"><img src="FOTO_PORTRET_3.jpg" alt="Portfolio 6" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="portret"><img src="FOTO_PORTRET_1.jpg" alt="Portret" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="portret"><img src="FOTO_PORTRET_2.jpg" alt="Portret" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="portret"><img src="FOTO_PORTRET_3.jpg" alt="Portret" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="portret"><img src="FOTO_PORTRET_4.jpg" alt="Portret" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="portret"><img src="FOTO_PORTRET_5.jpg" alt="Portret" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="zwangerschap"><img src="FOTO_ZWANGER_1.jpg" alt="Zwangerschap" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="zwangerschap"><img src="FOTO_ZWANGER_2.jpg" alt="Zwangerschap" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="zwangerschap"><img src="FOTO_ZWANGER_3.jpg" alt="Zwangerschap" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="zwangerschap"><img src="FOTO_ZWANGER_4.jpg" alt="Zwangerschap" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="loveshoot"><img src="FOTO_LOVE_1.jpg" alt="Loveshoot" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="loveshoot"><img src="FOTO_LOVE_2.jpg" alt="Loveshoot" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="loveshoot"><img src="FOTO_LOVE_4.jpg" alt="Loveshoot" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="familie"><img src="FOTO_FAMILY.jpg" alt="Familie" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="familie"><img src="FOTO_FAMILY_2.jpg" alt="Familie" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="familie"><img src="FOTO_FAMILY_5.jpg" alt="Familie" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pg" data-cat="familie"><img src="FOTO_FAMILY_6.jpg" alt="Familie" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     </div>
     <div class="portfolio-footer reveal">
       <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(246,241,233,.5);margin-bottom:24px;">Nieuwsgierig naar meer? Bekijk mijn Instagram voor het laatste werk.</p>
@@ -756,3 +766,23 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reve
+al').forEach(el => obs.observe(el));
+
+// Portfolio filter
+document.querySelectorAll('.pf-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.pg').forEach(item => {
+      if (filter === 'alles' || item.getAttribute('data-cat') === filter) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
