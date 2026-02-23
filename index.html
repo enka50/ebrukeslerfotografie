@@ -152,15 +152,9 @@ nav.scrolled{background:rgba(26,20,16,.95);padding:15px 60px;}
 .portfolio-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:42px;}
 .pf-btn{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;padding:8px 20px;border:1px solid rgba(246,241,233,.2);color:rgba(246,241,233,.5);background:none;cursor:pointer;transition:all .3s;}
 .pf-btn:hover,.pf-btn.active{border-color:var(--gold);color:var(--gold);}
-.portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin-bottom:48px;}
-.pg{overflow:hidden;cursor:pointer;position:relative;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:48px;}
+.pg{overflow:hidden;cursor:pointer;position:relative;aspect-ratio:3/4;}
 .pg.ph{display:block;}
-.pg:nth-child(1){grid-column:span 5;aspect-ratio:3/4;}
-.pg:nth-child(2){grid-column:span 4;aspect-ratio:3/4;}
-.pg:nth-child(3){grid-column:span 3;aspect-ratio:3/4;}
-.pg:nth-child(4){grid-column:span 4;aspect-ratio:1/1;}
-.pg:nth-child(5){grid-column:span 4;aspect-ratio:1/1;}
-.pg:nth-child(6){grid-column:span 4;aspect-ratio:1/1;}
 .pg::before{transition:opacity .5s;}
 .pg:hover::before{opacity:.7!important;}
 .portfolio-footer{text-align:center;}
@@ -270,8 +264,8 @@ footer{background:var(--soft-black);padding:70px 0 36px;}
   .portret-imgs{height:360px;}
   .dienst-img-sub{display:none;}
   .about-frame{display:none;}
-  .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;}
-  .pg:nth-child(n){grid-column:span 1;aspect-ratio:1/1;}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);gap:4px;}
+  .pg{aspect-ratio:1/1;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .why-item{border-right:none;border-bottom:1px solid rgba(246,241,233,.07);}
   .why-item:nth-child(2n){border-right:none;}
@@ -772,7 +766,7 @@ document.querySelectorAll('.pf-btn').forEach(btn => {
     const filter = btn.getAttribute('data-filter');
     document.querySelectorAll('.pg').forEach(item => {
       if (filter === 'alles' || item.getAttribute('data-cat') === filter) {
-        item.style.display = 'block';
+        item.style.display = '';
       } else {
         item.style.display = 'none';
       }
