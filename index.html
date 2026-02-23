@@ -132,7 +132,7 @@ nav.scrolled{background:rgba(26,20,16,.95);padding:15px 60px;}
 .dienst-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .dienst-inner.reverse{direction:rtl;}
 .dienst-inner.reverse > *{direction:ltr;}
-.dienst-img-wrap{position:relative;}
+.dienst-img-wrap{position:relative;padding-bottom:40px;padding-right:40px;}.dienst-inner.reverse .dienst-img-wrap{padding-right:0;padding-left:40px;}
 .dienst-img.ph{width:100%;aspect-ratio:3/4;}
 .dienst-img-sub.ph{position:absolute;bottom:-30px;right:-30px;width:45%;aspect-ratio:1/1;outline:6px solid var(--cream);}
 .dienst-inner.reverse .dienst-img-sub{right:auto;left:-30px;}
@@ -406,7 +406,7 @@ footer{background:var(--soft-black);padding:70px 0 36px;}
     <div class="dienst-inner reverse">
       <div class="dienst-img-wrap reveal">
         <img class="dienst-img" src="FOTO_LOVE_1.jpg" alt="Loveshoot" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;">
-        <div class="dienst-img-sub ph" style="background:linear-gradient(155deg,#7a5840 0%,#c4a882 50%,#e8d5c0 100%);outline-color:var(--warm-white);"></div>
+        <img class="dienst-img-sub" src="FOTO_LOVE_2.jpg" alt="Loveshoot detail" style="position:absolute;bottom:-30px;left:-30px;width:45%;aspect-ratio:1/1;object-fit:cover;outline:6px solid var(--warm-white);">
       </div>
       <div class="reveal" style="transition-delay:.2s;">
         <span class="dienst-num">03</span>
@@ -436,7 +436,7 @@ footer{background:var(--soft-black);padding:70px 0 36px;}
     <div class="dienst-inner">
       <div class="dienst-img-wrap reveal">
         <img class="dienst-img" src="FOTO_FAMILY.jpg" alt="Familieshoot" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;">
-        <div class="dienst-img-sub ph" style="background:linear-gradient(145deg,#e8d0b8 0%,#b08870 50%,#5c3e28 100%);outline-color:var(--cream);"></div>
+        <img class="dienst-img-sub" src="FOTO_FAMILY_2.jpg" alt="Familie detail" style="position:absolute;bottom:-30px;right:-30px;width:45%;aspect-ratio:1/1;object-fit:cover;outline:6px solid var(--cream);">
       </div>
       <div class="reveal" style="transition-delay:.2s;">
         <span class="dienst-num">04</span>
