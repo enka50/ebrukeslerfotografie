@@ -755,8 +755,7 @@ const obs = new IntersectionObserver((entries) => {
     if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reve
-al').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // Portfolio filter
 document.querySelectorAll('.pf-btn').forEach(btn => {
