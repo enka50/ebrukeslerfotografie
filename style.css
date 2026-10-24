@@ -310,3 +310,9 @@ footer{background:var(--soft-black);padding:70px 0 36px;}
 @media(max-width:860px){.page-grid{grid-template-columns:1fr;gap:40px;}.page-hero{padding:140px 0 60px;}.btn-link{margin:16px 0 0;display:block;}}
 .nav-cta{white-space:nowrap;}
 @media(max-width:1180px){.nav-links a{padding:8px 10px;letter-spacing:2px;}}
+.reviews-more{text-align:center;margin-top:44px;}
+.reviews-more a{font-size:13px;letter-spacing:.08em;color:#866434;text-decoration:none;border-bottom:1px solid var(--sand);padding-bottom:2px;}
+.reviews-more a:hover{color:var(--dark-brown);border-color:var(--dark-brown);}
+.reviews-grid{display:flex;flex-wrap:wrap;justify-content:center;}
+.reviews-grid .review-card{flex:0 1 calc((100% - 56px) / 3);}
+@media(max-width:860px){.reviews-grid .review-card{flex-basis:100%;}}
