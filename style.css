@@ -320,3 +320,8 @@ footer{background:var(--soft-black);padding:70px 0 36px;}
 .reviews-grid{display:flex;flex-wrap:wrap;justify-content:center;}
 .reviews-grid .review-card{flex:0 1 calc((100% - 56px) / 3);}
 @media(max-width:860px){.reviews-grid .review-card{flex-basis:100%;}}
+.page-price{margin-top:26px;font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--dark-brown);}
+.page-price span{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.06em;color:var(--text);margin-left:6px;}
+.page-price a{font-family:'Jost',sans-serif;font-size:13px;color:#866434;margin-left:14px;border-bottom:1px solid var(--sand);text-decoration:none;}
+.dienst-price{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--dark-brown);margin:6px 0 18px;}
+.dienst-price span{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.06em;color:var(--text);margin-left:6px;}
